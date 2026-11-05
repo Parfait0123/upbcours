@@ -1,0 +1,533 @@
+% !TEX program = pdflatex
+%% Exemple complet de la classe upbcours : Gestion de projet numérique
+%% Le nom, les contacts et les données pédagogiques de l'enseignant sont fictifs.
+\documentclass[12pt,twoside]{upbcours}
+
+\upbsetup{
+  titre           = {Gestion de projet numérique},
+  titrecourt      = {Projet numérique},
+  codes           = {UE : Management et innovation},
+  soustitre       = {Licence professionnelle en systèmes d'information (Deuxième année)},
+  auteurs         = {Dr Élodie KOUASSI},
+  etablissement   = {Université fictive du Golfe de Guinée\\\textbf{(UFGG)}},
+  faculte         = {Institut supérieur des technologies appliquées\\\textbf{(ISTA)}},
+  dateproduction  = {Novembre 2026},
+  datemiseajour   = {\today},
+  anneeacademique = {2026 -- 2027},
+  courriel        = {elodie.kouassi@ufgg-exemple.edu},
+  logouniversite  = {logos/uni1.png},
+  logoufr         = {logos/ecole1.png},
+}
+
+\upbsetup{
+  typechapitre = {Module},
+  numeroter    = oui,
+  niveautdm    = 1,
+  titreresume  = {À retenir},
+  couleurtitres = {245B75},
+  couleurfilets = {6B9DB2},
+  couleuronglet = {EAF3F6},
+}
+
+\begin{document}
+
+\frontmatter
+\pagedegarde
+\pagedroits
+\begin{remerciements}
+  \personne{Maya TCHIBOZO, relecture pédagogique}
+  \personne{Cellule d'innovation et de transformation numérique de l'UFGG}
+  \personne{Étudiants de la promotion pilote 2026--2027}
+\end{remerciements}
+\tabledesmatieres
+
+\mainmatter
+\partieupb{Syllabus}
+\sylset{formation}{Licence professionnelle en systèmes d'information}
+\sylset{grade}{Maître de conférences}
+\sylset{domaine}{Sciences et technologies}
+\sylset{annee}{2026--2027}
+\sylset{semestre}{3}
+\sylset{mention}{Systèmes d'information}
+\sylset{specialite}{Conception et pilotage des services numériques}
+\sylset{ue}{Management et innovation}
+\sylset{codeec}{SIN2304}
+\sylset{intituleec}{Gestion de projet numérique}
+\sylset{masse}{45}
+\sylset{ct}{24}
+\sylset{tptd}{21}
+\sylset{tpe}{30}
+\sylset{credits}{4}
+\sylset{effectifs}{32}
+\sylset{enseignants}{Dr Élodie KOUASSI (données fictives)}
+\sylset{contacts}{elodie.kouassi@ufgg-exemple.edu}
+\sylset{prerequis}{Bases de conception logicielle, expression écrite, travail en équipe et
+  utilisation courante d'un environnement numérique.}
+\sylset{descriptif}{Ce cours accompagne les étudiants dans la préparation, la réalisation et
+  l'évaluation d'un projet numérique. Il met en relation les besoins d'un commanditaire,
+  l'organisation d'une équipe, la conception d'un produit utile et le suivi de sa réalisation.}
+\sylset{objectifgeneral}{Conduire un projet numérique de manière structurée, collaborative,
+  responsable et orientée vers la valeur produite pour ses utilisateurs.}
+\sylset{objectifsspecifiques}{%
+  \textbf{Savoir}\par\nobreak
+  \begin{itemize}
+    \item distinguer un problème, un besoin, une solution et un livrable ;
+    \item décrire les rôles, les contraintes et les parties prenantes d'un projet ;
+    \item comparer les approches séquentielle, agile et hybride.
+  \end{itemize}
+  \textbf{Savoir-faire}\par\nobreak
+  \begin{itemize}
+    \item cadrer un projet et formuler des objectifs vérifiables ;
+    \item construire une feuille de route, un tableau de risques et un budget simplifié ;
+    \item animer une réunion, documenter une décision et présenter un prototype.
+  \end{itemize}
+  \textbf{Savoir-être}\par\nobreak
+  \begin{itemize}
+    \item écouter les utilisateurs et argumenter avec respect ;
+    \item rendre compte de façon fiable et prendre soin des engagements collectifs.
+  \end{itemize}}
+\sylset{contenu}{%
+  \begin{description}[leftmargin=0pt,labelindent=0pt,style=unboxed,font=\bfseries,itemsep=3pt]
+    \item[Module 1 : Comprendre le projet.] Vocabulaire, valeur, parties prenantes et critères de réussite.
+    \item[Module 2 : Cadrer et planifier.] Note de cadrage, périmètre, découpage et calendrier.
+    \item[Module 3 : Organiser l'équipe.] Rôles, communication, décisions et collaboration.
+    \item[Module 4 : Concevoir pour les usages.] Recherche utilisateur, parcours, prototype et accessibilité.
+    \item[Module 5 : Piloter l'incertitude.] Risques, qualité, budget, indicateurs et arbitrages.
+    \item[Module 6 : Livrer et apprendre.] Démonstration, déploiement, bilan et amélioration continue.
+  \end{description}}
+\sylset{methodes}{Cours dialogué, études de cas, ateliers en petits groupes, simulations de
+  réunions, revue par les pairs et projet fil rouge.}
+\sylset{lieu}{Campus numérique de l'UFGG et salle de projet 204}
+\sylset{materiel}{Ordinateur portable, tableau de suivi partagé, feuilles A3, cartes de persona,
+  vidéoprojecteur et accès à un outil de prototypage.}
+\sylset{references}{%
+  \small
+  \begin{enumerate}[label={[\arabic*]},leftmargin=9mm,itemsep=1.5pt]
+    \item A. Osterwalder et Y. Pigneur. \emph{Business Model Nouvelle Génération}. Pearson, 2011.
+    \item K. Schwaber et J. Sutherland. \emph{The Scrum Guide}. Édition pédagogique, 2020.
+    \item D. C. Cagan. \emph{Inspired}. Wiley, 2017.
+    \item E. Ries. \emph{Lean Startup}. Crown Business, 2011.
+    \item J. Nielsen. \emph{Usability Engineering}. Morgan Kaufmann, 1994.
+    \item ISO. \emph{ISO 21502 : Management de projet, lignes directrices}. 2020.
+  \end{enumerate}}
+\sylset{evalinter}{x}
+\sylset{evalfinale}{x}
+\sylset{pcinter}{40\%}
+\sylset{pcfinal}{60\%}
+\syllabusupb
+\explicationicones
+
+\chapitreupb{Comprendre le projet numérique}
+\introduction
+\begin{survol}
+  Un projet n'est pas seulement une liste de tâches : c'est une transformation temporaire
+  qui doit produire une valeur reconnaissable. Ce module donne le vocabulaire commun nécessaire
+  avant de choisir une méthode ou un outil.
+\end{survol}
+\begin{objectifs}
+  \item distinguer finalité, objectif, résultat et livrable ;
+  \item identifier les attentes contradictoires d'un projet réel ;
+  \item formuler une première hypothèse de valeur.
+\end{objectifs}
+\begin{concepts}
+  \notion{Projet}{Démarche temporaire visant un résultat singulier dans un contexte donné.}
+  \notion{Valeur}{Bénéfice attendu par une personne ou une organisation, au regard d'un coût.}
+  \notion{Partie prenante}{Personne ou groupe qui influence le projet ou subit ses effets.}
+\end{concepts}
+\sujet{De l'idée au problème}
+Une idée de service ne constitue pas encore un projet. Pour devenir actionnable, elle doit être
+reliée à une situation observable, à des personnes concernées et à une amélioration attendue.
+La question utile n'est donc pas « quelle application voulons-nous développer ? », mais
+« quelle difficulté voulons-nous réduire, pour qui, et comment le saurons-nous ? »
+\begin{definition}[Problème de projet]
+  Un problème est un écart documenté entre une situation actuelle et une situation souhaitée,
+  dont la réduction est possible dans les contraintes du projet.
+\end{definition}
+\begin{icone}{astuce}
+  Remplacez les verbes vagues comme « moderniser » par un comportement observable :
+  « permettre à un usager de trouver une information en moins de trois minutes ».
+\end{icone}
+
+\sujet{Les dimensions de la réussite}
+La réussite ne se résume pas au respect d'une date. Un projet numérique équilibré tient compte de
+la valeur d'usage, de la qualité, du coût, du délai et de l'appropriation. Ces dimensions peuvent
+entrer en tension : ajouter une fonctionnalité peut augmenter la valeur perçue tout en retardant
+la mise à disposition du service.
+\begin{theoreme}[des contraintes liées]
+  Toute décision de projet modifie au moins une combinaison de périmètre, délai, ressources,
+  qualité et risques. Une décision fiable explicite le compromis accepté.
+\end{theoreme}
+\begin{exemple}
+  Pour un portail d'inscription, l'équipe peut livrer d'abord la consultation des pièces
+  nécessaires, puis reporter la prise de rendez-vous à une version ultérieure.
+\end{exemple}
+\sousujet{Carte des parties prenantes}
+Classez les acteurs selon leur pouvoir d'influence et leur niveau d'intérêt. Le commanditaire,
+l'équipe, les utilisateurs finaux et les services support n'ont pas les mêmes critères de réussite.
+\sujet{Atelier : la fiche valeur}
+\begin{icone}{activite}
+  En groupes de quatre, choisissez un service public fictif. Décrivez un problème en une phrase,
+  trois utilisateurs concernés, un bénéfice mesurable et une contrainte non négociable.
+\end{icone}
+\begin{enumerate}
+  \item Décrire la situation actuelle sans proposer de solution.
+  \item Recueillir deux faits qui confirment le problème.
+  \item Écrire une hypothèse : « Nous pensons que \ldots parce que \ldots ».
+  \item Proposer un indicateur simple qui permettrait de l'infirmer.
+\end{enumerate}
+\begin{resumechapitre}
+  Un projet numérique part d'un problème situé et produit une valeur vérifiable. Les contraintes
+  doivent être rendues visibles afin que les arbitrages futurs soient compréhensibles.
+\end{resumechapitre}
+\begin{evalformative}
+  Transformez « créer une plateforme moderne » en objectif observable pour un service de bibliothèque.
+\end{evalformative}
+\begin{autoevaluation}
+  \begin{enumerate}
+    \item Quelle différence faites-vous entre un livrable et un bénéfice ?
+    \item Citez quatre parties prenantes d'un projet numérique.
+    \item Pourquoi une hypothèse de valeur doit-elle pouvoir être infirmée ?
+  \end{enumerate}
+\end{autoevaluation}
+
+\chapitreupb{Cadrer et planifier}
+\introduction
+\begin{survol}
+  Le cadrage transforme une intention en contrat de travail lisible. Il fixe le pourquoi, le pour
+  qui, le quoi et le comment sans prétendre supprimer toute incertitude.
+\end{survol}
+\begin{objectifs}
+  \item rédiger une note de cadrage courte ;
+  \item définir un périmètre inclus et exclu ;
+  \item construire une première feuille de route.
+\end{objectifs}
+\sujet{La note de cadrage}
+Une note de cadrage tient sur quelques pages et sert de référence commune. Elle présente le contexte,
+le problème, les résultats attendus, les exclusions, les hypothèses, les acteurs et le mode de décision.
+\begin{definition}[Périmètre]
+  Le périmètre est l'ensemble des résultats que le projet s'engage à produire, accompagné de ses
+  limites explicites.
+\end{definition}
+\begin{icone}{miseengarde}
+  Une exclusion écrite n'est pas un refus définitif : c'est une protection contre l'ambiguïté
+  pendant la période où l'équipe doit tenir ses engagements.
+\end{icone}
+\sujet{Découper le travail}
+Le découpage en résultats puis en lots rend le travail discut able. Chaque lot doit avoir un
+responsable, une condition de fin et une dépendance connue. Évitez les tâches trop générales
+comme « faire le site » ; préférez « valider le formulaire de demande avec trois utilisateurs ».
+\begin{exemple}
+  Pour un catalogue en ligne : recueillir les critères, dessiner le parcours, prototyper la
+  recherche, tester le prototype, puis préparer la mise en ligne.
+\end{exemple}
+\begin{icone}{note}
+  La planification est une hypothèse révisable, pas une promesse de prédire exactement l'avenir.
+\end{icone}
+\sujet{Calendrier et jalons}
+Un jalon marque une décision ou un résultat vérifiable. Il ne correspond pas nécessairement à une
+date de fin de tâche. La feuille de route peut présenter trois horizons : maintenant, ensuite,
+et plus tard. Cette vue évite de détailler artificiellement des travaux encore mal compris.
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{p{0.25\linewidth}p{0.28\linewidth}p{0.32\linewidth}}
+    \toprule
+    Horizon & Résultat & Question de décision\\
+    \midrule
+    Maintenant & Parcours prioritaire prototypé & Le besoin est-il compris ?\\
+    Ensuite & Version testable & Les utilisateurs réussissent-ils la tâche ?\\
+    Plus tard & Service déployé & Le service est-il soutenable ?\\
+    \bottomrule
+  \end{tabular}
+  \caption{Exemple de feuille de route à trois horizons.}
+\end{table}
+\begin{resumechapitre}
+  Le cadrage rend les engagements discutables et les limites visibles. Un bon plan relie des
+  résultats à des décisions, plutôt qu'une simple succession de tâches.
+\end{resumechapitre}
+\begin{evalformative}
+  Rédigez le périmètre inclus et exclu d'un outil fictif de réservation de salles.
+\end{evalformative}
+\begin{autoevaluation}
+  \begin{enumerate}
+    \item Quelles rubriques doivent figurer dans une note de cadrage ?
+    \item Comment reconnaître une tâche trop vague ?
+    \item Quelle est l'utilité d'un jalon ?
+  \end{enumerate}
+\end{autoevaluation}
+
+\chapitreupb{Organiser l'équipe et la communication}
+\introduction
+\begin{survol}
+  Les projets avancent par conversations, décisions et apprentissages. Ce module propose des
+  repères pour distribuer les responsabilités sans isoler les compétences.
+\end{survol}
+\begin{objectifs}
+  \item clarifier les responsabilités ;
+  \item choisir un canal et un rythme de communication ;
+  \item conduire une réunion courte et utile.
+\end{objectifs}
+\sujet{Rôles et responsabilités}
+Une équipe efficace sait qui prépare, qui décide, qui contribue et qui doit être informé. Une même
+personne peut tenir plusieurs rôles dans une petite équipe, mais la responsabilité d'une décision
+doit rester explicite.
+\begin{definition}[Responsabilité]
+  Une responsabilité est un engagement observable envers un résultat, avec l'autorité minimale
+  nécessaire pour agir ou demander un arbitrage.
+\end{definition}
+\begin{icone}{saviezvous}
+  Dans une petite équipe, le rôle de facilitateur peut tourner chaque semaine afin de distribuer
+  la charge invisible de préparation et de suivi.
+\end{icone}
+\sujet{La réunion comme outil de production}
+Une réunion utile possède un objectif, une durée, des participants justifiés et une trace. Commencez
+par le résultat attendu, distinguez les informations des décisions, puis terminez par les actions
+attribuées. Le compte rendu doit pouvoir être compris par une personne absente.
+\begin{enumerate}
+  \item Ouverture : objectif et contraintes de temps.
+  \item Exploration : faits, questions et options.
+  \item Décision : choix, responsable et date de réexamen.
+  \item Clôture : synthèse et diffusion de la trace.
+\end{enumerate}
+\sujet{Gérer les désaccords}
+Un désaccord explicite est souvent plus sain qu'un accord silencieux. Reformulez d'abord le point
+de vue de l'autre, séparez les faits des préférences et proposez une expérience limitée quand la
+discussion ne permet pas de trancher.
+\begin{icone}{jeu}
+  Simulation : une équipe doit choisir entre une livraison rapide et une fonctionnalité complète.
+  Un étudiant joue le commanditaire, deux l'équipe et un autre la personne utilisatrice.
+\end{icone}
+\begin{resumechapitre}
+  L'organisation d'une équipe repose sur des responsabilités visibles, des décisions tracées et
+  des échanges adaptés à l'urgence. La communication est une partie du travail, pas une décoration.
+\end{resumechapitre}
+\begin{evalformative}
+  Préparez l'ordre du jour d'une réunion de quinze minutes destinée à débloquer une tâche.
+\end{evalformative}
+\begin{autoevaluation}
+  \begin{enumerate}
+    \item Pourquoi attribuer un responsable à une action ?
+    \item Quelle différence entre information et décision ?
+    \item Comment rendre un désaccord productif ?
+  \end{enumerate}
+\end{autoevaluation}
+
+\chapitreupb{Concevoir pour les usages}
+\introduction
+\begin{survol}
+  Concevoir pour les usages consiste à comprendre des situations réelles avant de figer une
+  solution. Les prototypes rendent les idées discutables à faible coût.
+\end{survol}
+\begin{objectifs}
+  \item préparer un entretien utilisateur ;
+  \item représenter un parcours et une priorité ;
+  \item construire un prototype compréhensible et accessible.
+\end{objectifs}
+\begin{concepts}
+  \notion{Persona}{Portrait synthétique d'un groupe d'utilisateurs partageant une situation.}
+  \notion{Parcours}{Suite d'étapes et d'émotions qui relie un besoin à un résultat.}
+  \notion{Prototype}{Représentation volontairement incomplète destinée à apprendre.}
+\end{concepts}
+\sujet{Observer avant de concevoir}
+Un entretien ne cherche pas à faire valider une solution déjà choisie. Il recueille des exemples
+concrets : dernière occurrence, contournements, vocabulaire, contraintes et critères de confiance.
+Les questions ouvertes sont préférables aux questions qui suggèrent la réponse.
+\begin{icone}{lecture}
+  Lisez une page de service public et repérez les mots que l'institution emploie, puis ceux
+  qu'une personne novice aurait besoin de comprendre.
+\end{icone}
+\sujet{Du parcours au prototype}
+Le parcours décrit le contexte avant l'écran. Pour chaque étape, notez l'intention de la personne,
+son action, l'information dont elle a besoin et le signal qui confirme la réussite. Le prototype
+peut ensuite représenter uniquement les moments qui portent le plus d'incertitude.
+\begin{exemple}
+  Une demande de document peut être représentée par quatre écrans : comprendre les pièces,
+  vérifier l'éligibilité, déposer le dossier et obtenir une confirmation traçable.
+\end{exemple}
+\sujet{Accessibilité et critères d'acceptation}
+L'accessibilité s'anticipe dès le cadrage : contraste, navigation au clavier, langage clair,
+taille des zones interactives et alternatives aux contenus visuels. Un critère d'acceptation décrit
+un comportement vérifiable plutôt qu'une impression générale de qualité.
+\begin{theoreme}[du prototype honnête]
+  Plus une décision est coûteuse à modifier, plus elle doit être testée sous une forme simple
+  avant son implémentation complète.
+\end{theoreme}
+\begin{resumechapitre}
+  L'écoute produit des faits, le parcours donne du contexte et le prototype permet d'apprendre
+  avant d'investir. L'accessibilité et les critères de réussite font partie de la conception.
+\end{resumechapitre}
+\begin{evalformative}
+  Écrivez trois questions d'entretien qui explorent une inscription récente sans proposer de solution.
+\end{evalformative}
+\begin{autoevaluation}
+  \begin{enumerate}
+    \item Qu'est-ce qu'un prototype doit permettre d'apprendre ?
+    \item Pourquoi partir d'un exemple vécu pendant un entretien ?
+    \item Donnez deux critères d'acceptation vérifiables.
+  \end{enumerate}
+\end{autoevaluation}
+
+\chapitreupb{Piloter l'incertitude}
+\introduction
+\begin{survol}
+  Piloter ne signifie pas tout prévoir. Il s'agit de rendre les incertitudes visibles, de choisir
+  les vérifications les plus utiles et de décider à partir d'informations suffisamment fiables.
+\end{survol}
+\begin{objectifs}
+  \item décrire un risque par sa cause et son effet ;
+  \item choisir une réponse proportionnée ;
+  \item suivre quelques indicateurs sans suradministrer le projet.
+\end{objectifs}
+\sujet{Le registre des risques}
+Un risque est un événement incertain dont la survenue peut modifier les objectifs. Décrivez sa cause,
+son événement, son effet, sa probabilité et sa gravité. Ajoutez un propriétaire et une prochaine
+action de réduction : un registre sans action n'est qu'une liste d'inquiétudes.
+\begin{definition}[Risque]
+  Un risque est une possibilité future, différente d'un problème déjà avéré, qui mérite une décision
+  de prévention, de réduction, de transfert ou d'acceptation.
+\end{definition}
+\begin{icone}{miseengarde}
+  Ne transformez pas une échelle de couleur en vérité mathématique : discutez ce que chaque niveau
+  signifie dans le contexte précis du projet.
+\end{icone}
+\sujet{Qualité et indicateurs}
+La qualité se vérifie à partir de critères définis avant la démonstration. Un indicateur doit avoir
+un nom, une source, une fréquence, une cible et une personne responsable de son interprétation.
+Comptez moins d'indicateurs, mais utilisez-les pour agir.
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{p{0.3\linewidth}p{0.25\linewidth}p{0.3\linewidth}}
+    \toprule
+    Indicateur & Source & Décision possible\\
+    \midrule
+    Taux de réussite d'une tâche & Test observé & Revoir le parcours\\
+    Délai de réponse & Journal du service & Simplifier le traitement\\
+    Défauts bloquants & Revue de version & Retarder la livraison\\
+    \bottomrule
+  \end{tabular}
+  \caption{Indicateurs orientés vers l'action.}
+\end{table}
+\sujet{Arbitrer avec transparence}
+Un arbitrage est une décision qui accepte une perte relative pour protéger une priorité. Écrivez
+le contexte, les options étudiées, le choix, la raison, les effets attendus et la date de réexamen.
+Cette trace évite de rouvrir sans cesse la même discussion.
+\begin{icone}{devoir}
+  À partir d'un registre de cinq risques, préparez une note d'arbitrage d'une page et défendez-la
+  devant un autre groupe.
+\end{icone}
+\begin{resumechapitre}
+  Un risque devient pilotable quand il est décrit, attribué et relié à une action. Les indicateurs
+  n'ont de valeur que s'ils éclairent une décision et si leurs limites sont connues.
+\end{resumechapitre}
+\begin{evalformative}
+  Formulez un risque lié à une dépendance externe et proposez deux réponses de réduction.
+\end{evalformative}
+\begin{autoevaluation}
+  \begin{enumerate}
+    \item Comment distinguer un risque d'un problème ?
+    \item Quelles informations rendent un indicateur actionnable ?
+    \item Que faut-il conserver dans une décision d'arbitrage ?
+  \end{enumerate}
+\end{autoevaluation}
+
+\chapitreupb{Livrer, évaluer et apprendre}
+\introduction
+\begin{survol}
+  La livraison est une transition vers l'usage, pas la fin de la responsabilité. Une démonstration,
+  une mise en service accompagnée et un bilan honnête permettent de transformer l'expérience en progrès.
+\end{survol}
+\begin{objectifs}
+  \item préparer une démonstration centrée sur la valeur ;
+  \item organiser une mise en service progressive ;
+  \item rédiger un bilan qui distingue faits, interprétations et décisions.
+\end{objectifs}
+\sujet{Démontrer la valeur}
+Une démonstration raconte une situation avant de montrer une fonctionnalité. Elle présente le
+problème, le parcours, le résultat observable et les limites connues. Une bonne démonstration
+permet au public de poser des questions précises, même lorsque le produit est incomplet.
+\begin{icone}{guide}
+  Préparez un scénario nominal, un scénario d'erreur et une réponse à la question :
+  « Qu'avez-vous appris qui modifie la suite du projet ? »
+\end{icone}
+\sujet{Déployer avec prudence}
+Une mise en service progressive réduit le coût d'une erreur. Définissez qui peut accéder au service,
+comment revenir en arrière, quels signaux surveiller et qui répond aux utilisateurs. Le transfert
+de compétences et la documentation sont des livrables à part entière.
+\begin{exemple}
+  Une équipe ouvre son formulaire à dix utilisateurs volontaires pendant deux jours, observe les
+  demandes d'aide, corrige les obstacles puis élargit l'accès.
+\end{exemple}
+\sujet{Bilan et amélioration continue}
+Le bilan ne cherche pas un coupable. Il compare les hypothèses initiales aux observations, identifie
+les décisions utiles et choisit quelques changements concrets. Une rétrospective réussie produit
+des engagements modestes, attribués et datés.
+\begin{icone}{evaluation}
+  Évaluation du projet fil rouge : dossier de cadrage (20\%), prototype testé (25\%), présentation
+  finale (25\%), journal d'équipe et rétrospective (30\%).
+\end{icone}
+\begin{resumechapitre}
+  Livrer consiste à rendre une valeur utilisable et soutenable. La démonstration, le déploiement
+  progressif et le bilan transforment un résultat ponctuel en capacité d'apprendre.
+\end{resumechapitre}
+\begin{evalformative}
+  Préparez une liste de vérification pour la mise en service d'un service fictif.
+\end{evalformative}
+\begin{autoevaluation}
+  \begin{enumerate}
+    \item Qu'est-ce qu'une démonstration centrée sur la valeur ?
+    \item Pourquoi prévoir un retour en arrière ?
+    \item Comment distinguer un fait d'une interprétation dans un bilan ?
+  \end{enumerate}
+\end{autoevaluation}
+
+\partieupb{Ressources et travaux dirigés}
+\sujet{Projet fil rouge : Guichet Clair}
+Les équipes conçoivent un parcours fictif permettant à des étudiants de trouver une aide
+administrative adaptée. Le projet doit rester limité à l'information et à l'orientation :
+aucune donnée personnelle réelle ne doit être collectée.
+\begin{objectifs}
+  \item produire une note de cadrage de deux pages ;
+  \item réaliser un prototype de cinq écrans maximum ;
+  \item présenter trois enseignements tirés de tests utilisateurs fictifs.
+\end{objectifs}
+\sujet{Barème de la présentation finale}
+\begin{tabular}{p{0.55\linewidth}r}
+  \toprule
+  Critère & Points\\
+  \midrule
+  Compréhension du problème et des utilisateurs & 5\\
+  Cohérence du périmètre et des décisions & 5\\
+  Qualité du prototype et accessibilité & 5\\
+  Argumentation, trace et retour d'expérience & 5\\
+  \bottomrule
+\end{tabular}
+
+\partieupb{Annexes}
+\fichetp{1}
+\fichetd[
+  titre       = {Cadrer le projet Guichet Clair},
+  duree       = {2 h},
+  objectif    = {Formuler un problème, un périmètre et trois critères de réussite.},
+  equipe      = {Groupes de 4 étudiants.},
+  individuel  = {Chaque étudiant rédige une hypothèse de valeur.},
+  materiel    = {Fiche A3, marqueurs, tableau de suivi partagé.},
+  consignes   = {\begin{enumerate}\item Décrire la situation actuelle.\item Cartographier les acteurs.
+    \item Rédiger la note de cadrage.\item Faire relire le périmètre par un autre groupe.\end{enumerate}},
+  restitution = {Note de cadrage et présentation de cinq minutes.},
+  role        = {Questionner les hypothèses et aider à préciser les critères.},
+  evaluation  = {Barème sur 20 : problème (5), périmètre (5), critères (5), coopération (5).}
+]{2}
+\fichetd[
+  titre       = {Tester un prototype},
+  duree       = {3 h},
+  objectif    = {Observer un parcours et proposer des améliorations argumentées.},
+  equipe      = {Binômes : une personne observe, une personne anime.},
+  individuel  = {Journal réflexif d'une page.},
+  materiel    = {Prototype papier, grille d'observation, chronomètre.},
+  consignes   = {\begin{enumerate}\item Préparer deux scénarios.\item Observer sans aider trop tôt.
+    \item Noter les faits.\item Prioriser trois améliorations.\end{enumerate}},
+  restitution = {Carte des observations et prototype révisé.},
+  role        = {Garantir un cadre d'observation respectueux.},
+  evaluation  = {Barème sur 20 : observation (8), analyse (6), priorisation (6).}
+]{3}
+
+\end{document}

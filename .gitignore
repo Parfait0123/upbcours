@@ -1,0 +1,21 @@
+# fichiers produits par la compilation LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+# PDF compilés (générés par l'intégration continue, voir .github/workflows)
+*.pdf
+# fichiers d'éditeurs et du système
+.DS_Store
+Thumbs.db
+*~

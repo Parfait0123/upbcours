@@ -1,0 +1,30 @@
+name: Compiler l'exemple
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pdflatex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compiler exemple.tex (pdfLaTeX)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: exemple.tex
+
+      - name: Compiler le syllabus autonome (pdfLaTeX)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: syllabus_UPB.tex
+          working_directory: syllabus_autonome
+
+      - name: Publier les PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: |
+            exemple.pdf
+            syllabus_autonome/syllabus_UPB.pdf

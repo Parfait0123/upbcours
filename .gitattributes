@@ -1,0 +1,6 @@
+* text=auto
+*.pfb binary
+*.tfm binary
+*.png binary
+*.jpg binary
+*.jpeg binary

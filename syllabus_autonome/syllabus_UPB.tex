@@ -1,0 +1,191 @@
+% !TEX program = pdflatex
+% DOCUMENT DE DEMONSTRATION : toutes les identités et coordonnées sont fictives.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=12.7mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{needspace}
+\usepackage{tcolorbox}\tcbuselibrary{breakable,skins}
+\usepackage{amssymb}
+
+% Police : Carlito si le paquet est installé, sinon Helvetica (sans-serif)
+\IfFileExists{carlito.sty}%
+  {\usepackage{carlito}\renewcommand{\familydefault}{\sfdefault}}%
+  {\usepackage{helvet}\renewcommand{\familydefault}{\sfdefault}}
+\definecolor{fondpage}{HTML}{E2EFD9}
+\definecolor{bandeau}{HTML}{F2F2F2}
+\definecolor{aco}{HTML}{C00000}
+\pagecolor{fondpage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}
+\setlist{nosep,leftmargin=*}
+\raggedbottom
+
+% ------------------------------------------------------------------
+%  Champs à renseigner (modifiez ici)
+% ------------------------------------------------------------------
+\newcommand{\aco}{\textcolor{aco}{\itshape à compléter}}
+
+\newcommand{\fFormation}{Informatique et systèmes numériques -- Deuxième année (ISEM)}
+\newcommand{\fGrade}{Maître de conférences}
+\newcommand{\fDomaine}{Informatique}
+\newcommand{\fAnnee}{2026--2027}
+\newcommand{\fSemestre}{3}
+\newcommand{\fMention}{Sciences et technologies du numérique}
+\newcommand{\fSpecialite}{Ingénierie des systèmes d’information}
+\newcommand{\fUE}{Ingénierie des données}
+\newcommand{\fCodeEC}{INF242}
+\newcommand{\fIntituleEC}{Conception et administration des bases de données}
+\newcommand{\fMasse}{54}
+\newcommand{\fCT}{30}
+\newcommand{\fTPTD}{24}
+\newcommand{\fTPE}{36}
+\newcommand{\fCredits}{4}
+\newcommand{\fEffectifs}{28}
+\newcommand{\fEnseignants}{Dr Mireille KOUASSI}
+\newcommand{\fContacts}{m.kouassi@isem-universite.example}
+\newcommand{\fEvalInter}{x}     % mettre {x} pour cocher
+\newcommand{\fEvalFinale}{x}    % mettre {x} pour cocher
+\newcommand{\fPcInter}{40\%}
+\newcommand{\fPcFinal}{60\%}
+
+% ------------------------------------------------------------------
+%  Mise en forme du formulaire
+% ------------------------------------------------------------------
+\newcommand{\lab}[2]{\parbox[c]{\dimexpr#1-2mm\relax}{\raggedright\itshape #2}\hspace{2mm}}
+\newcommand{\tb}[2]{%
+  \tcbox[on line,colback=white,colframe=black,boxrule=.4pt,arc=.9mm,boxsep=0pt,
+         left=1.5mm,right=1.5mm,top=.7mm,bottom=.7mm]%
+    {\parbox[c]{\dimexpr#1-3mm-.8pt\relax}{\raggedright\rule[-1.8mm]{0pt}{6.8mm}#2}}}
+\newcommand{\cb}[2]{\tb{#1}{\centering #2}}
+\newcommand{\sq}[1]{\tb{7mm}{\centering\ifdefempty{#1}{}{$\boxtimes$}}}
+\makeatletter
+\newcommand{\listeavec}[2]{{\@beginparpenalty=10000\textbf{#1}\par\nobreak #2}}
+\makeatother
+\newcommand{\gap}{\par\vspace{3mm}\noindent}
+\newcommand{\bloc}[2]{%  étiquette, contenu (cadre blanc extensible)
+  \Needspace{5\baselineskip}\par\vspace{3mm}\noindent{\raggedright\itshape #1\par}\vspace{1mm}
+  \begin{tcolorbox}[breakable,enhanced,colback=white,colframe=black,boxrule=.4pt,arc=.9mm,
+      boxsep=1.5pt,left=2pt,right=2pt,top=1.5pt,bottom=1.5pt,before skip=0pt,after skip=0pt]
+    #2%
+  \end{tcolorbox}}
+
+% pied de page « Page X sur Y » 
+\usepackage{fancyhdr}
+\fancypagestyle{syl}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+  \fancyfoot[C]{\sffamily\small Page \thepage\ sur \pageref{fin}}}
+\pagestyle{syl}
+
+\begin{document}
+\thispagestyle{syl}
+% ---- bandeau d'en-tête pleine largeur
+\begin{tikzpicture}[remember picture,overlay,x={(1mm,0)},y={(0,-1mm)},shift={(current page.north west)}]
+  \fill[bandeau] (0,0) rectangle (210,27);
+ \node[anchor=north west,inner sep=0pt] at (12.7,2) {\includegraphics[height=23mm,keepaspectratio]{../logos/uni1.png}};
+    \node[anchor=north east,inner sep=0pt] at (197.3,2) {\includegraphics[height=23mm,keepaspectratio]{../logos/ecole1.png}};
+  \node[inner sep=0pt,align=center,text width=140mm] at (105,13.5)
+    {{\bfseries\fontsize{13}{16}\selectfont Université Atlantique du Numérique (UAN)\par}\vspace{1mm}%
+     {\bfseries\fontsize{11}{13}\selectfont Institut Supérieur des Sciences et de l'Ingénierie (ISEM)}};
+\end{tikzpicture}
+\vspace*{17mm}
+
+% ---- identification
+\noindent\lab{40mm}{Intitulé de la Formation}\tb{\dimexpr\linewidth-40mm\relax}{\fFormation}\gap
+\newlength{\half}\setlength{\half}{\dimexpr(\linewidth-6mm)/2\relax}
+\lab{26mm}{Grade}\tb{\dimexpr\half-26mm\relax}{\fGrade}\hfill\lab{26mm}{Domaine}\tb{\dimexpr\half-26mm\relax}{\fDomaine}\gap
+\lab{26mm}{Année académique}\tb{\dimexpr\half-26mm\relax}{\fAnnee}\hfill\lab{26mm}{Semestre}\tb{\dimexpr\half-26mm\relax}{\fSemestre}\gap
+\lab{26mm}{Mention}\tb{\dimexpr\half-26mm\relax}{\fMention}\hfill\lab{26mm}{Spécialité}\tb{\dimexpr\half-26mm\relax}{\fSpecialite}\par\vspace{5mm}\noindent
+\lab{40mm}{UE}\tb{\dimexpr\linewidth-40mm\relax}{\fUE}\gap
+\lab{26mm}{Code de l'EC}\tb{40mm}{\fCodeEC}\gap
+\lab{40mm}{Intitulé de l'EC}\tb{\dimexpr\linewidth-40mm\relax}{\fIntituleEC}\par\vspace{5mm}\noindent
+\lab{27mm}{Masse horaire}\cb{15mm}{\fMasse}\hfill
+\lab{11mm}{CT}\cb{15mm}{\fCT}\hfill
+\lab{17mm}{TP/TD}\cb{15mm}{\fTPTD}\hfill
+\lab{13mm}{TPE}\cb{15mm}{\fTPE}\hfill
+\lab{29mm}{Nombre de crédits}\cb{15mm}{\fCredits}\gap
+\lab{40mm}{Effectifs des apprenants}\cb{18mm}{\fEffectifs}\par\vspace{5mm}\noindent
+\parbox[t]{\half}{\lab{\half}{Chargé(es) de l'enseignement}\par\vspace{1mm}\tb{\half}{\fEnseignants}}\hfill
+\parbox[t]{\half}{\lab{\half}{Contacts}\par\vspace{1mm}\tb{\half}{\fContacts}}
+\par\vspace{4mm}\noindent\rule{\linewidth}{1mm}\par
+
+% ---- rubriques
+\bloc{Prérequis}{%
+  Connaissances élémentaires en informatique ; utilisation d'un système d'exploitation ; notions de
+  programmation (variables, conditions, boucles) et compréhension des structures de données simples.}
+
+\bloc{Court descriptif de l'EC }{%
+  Ce cours présente les principes de conception, de mise en place et d'administration des bases de données
+  relationnelles. Il aborde la modélisation des données, le modèle entité-association, la transformation
+  vers le modèle relationnel, le langage SQL, la normalisation, les transactions, la sécurité et les
+  stratégies de sauvegarde. Les travaux pratiques s'appuient sur des cas concrets de gestion d'informations.}
+
+\bloc{Objectif général de l'EC}{%
+  Être capable de concevoir, interroger, sécuriser et administrer une base de données relationnelle adaptée
+  aux besoins d'une organisation.}
+
+\bloc{Objectifs spécifiques (savoir / savoir-faire / savoir-être)}{%
+  \listeavec{Savoir}{\begin{itemize}
+    \item expliquer les concepts fondamentaux des bases de données et le rôle d'un système de gestion de bases de données ;
+    \item décrire les modèles conceptuel, logique et physique des données ;
+    \item connaître les principes des clés, des contraintes d'intégrité et de la normalisation ;
+    \item comprendre les mécanismes de transactions, de concurrence et de contrôle d'accès.
+  \end{itemize}}
+  \listeavec{Savoir-faire}{\begin{itemize}
+    \item construire un modèle entité-association à partir d'un cahier des charges ;
+    \item transformer un modèle conceptuel en schéma relationnel ;
+    \item créer et modifier des tables à l'aide du langage SQL ;
+    \item écrire des requêtes de sélection, de jointure, d'agrégation et de mise à jour ;
+    \item mettre en œuvre des sauvegardes, restaurations et règles simples de sécurité.
+  \end{itemize}}
+  \listeavec{Savoir-être}{\begin{itemize}
+    \item travailler avec méthode et précision dans la structuration des données ;
+    \item documenter les choix de conception et respecter la confidentialité des informations ;
+    \item collaborer efficacement lors de la réalisation d'un projet de base de données.
+  \end{itemize}}}
+
+\bloc{Contenu de l'enseignement }{%
+  \begin{description}[leftmargin=0pt,labelindent=0pt,style=unboxed,font=\bfseries,itemsep=3pt]
+    \item[Chapitre 1 : Introduction aux bases de données.] Notion de donnée et d'information ; fichiers et bases de données ; rôles et fonctions d'un système de gestion de bases de données ; architecture générale.
+    \item[Chapitre 2 : Modélisation conceptuelle.] Recueil des besoins ; entités, associations et attributs ; cardinalités ; contraintes ; construction d'un modèle entité-association.
+    \item[Chapitre 3 : Modèle relationnel.] Relations, domaines et tuples ; schémas relationnels ; clés primaires et étrangères ; contraintes d'intégrité ; passage du modèle conceptuel au modèle relationnel.
+    \item[Chapitre 4 : Normalisation des données.] Dépendances fonctionnelles ; première, deuxième et troisième formes normales ; réduction des redondances et prévention des anomalies.
+    \item[Chapitre 5 : Langage SQL.] Création et modification des tables ; insertion, mise à jour et suppression ; requêtes SELECT ; filtres, tris, jointures, fonctions d'agrégation et sous-requêtes.
+    \item[Chapitre 6 : Transactions et concurrence.] Notion de transaction ; propriétés ACID ; validation et annulation ; verrous et anomalies liées aux accès concurrents.
+    \item[Chapitre 7 : Administration et sécurité.] Gestion des utilisateurs et privilèges ; sauvegarde et restauration ; indexation ; notions de performance et de maintenance.
+    \item[Chapitre 8 : Projet pratique et évaluation.] Conception et réalisation d'une base de données pour un cas d'étude ; rédaction de requêtes ; présentation et correction du projet.
+  \end{description}}
+
+\bloc{Méthodes d'enseignement (cours théoriques ; travaux de recherche et discussion en groupe ; ...)}{%
+  Cours illustrés par des démonstrations ; exercices de modélisation ; travaux pratiques sur un système de
+  gestion de bases de données ; mini-projet réalisé en groupe et séances de correction.}
+
+\bloc{Lieu d'apprentissage }{Porto-Novo / Quartier académique}
+
+\bloc{Matériel pédagogique}{%
+  Support de cours « Conception et administration des bases de données », version 2026--2027 (M. Kouassi, ISEM).
+  Ordinateurs, vidéoprojecteur et environnement de gestion de bases de données.}
+
+\bloc{Lectures et références proposées}{%
+  \small
+  \begin{enumerate}[label={[\arabic*]},leftmargin=9mm,itemsep=1.5pt]
+    \item A. Silberschatz, H. F. Korth et S. Sudarshan. \emph{Database System Concepts}. McGraw-Hill.
+    \item R. Elmasri et S. B. Navathe. \emph{Fundamentals of Database Systems}. Pearson.
+    \item C. J. Date. \emph{An Introduction to Database Systems}. Addison-Wesley.
+    \item A. Oppel. \emph{Databases: A Beginner's Guide}. McGraw-Hill.
+    \item A. Beaulieu. \emph{Learning SQL}. O'Reilly Media.
+    \item P. DuBois. \emph{MySQL Cookbook}. O'Reilly Media.
+    \item PostgreSQL Global Development Group. \emph{PostgreSQL Documentation}.
+  \end{enumerate}}
+
+% ---- évaluation
+\Needspace{8\baselineskip}\par\vspace{5mm}\noindent
+\lab{38mm}{Modalités d'évaluation}\sq{\fEvalInter}\hspace{2mm}\lab{50mm}{Évaluation intermédiaire}\hfill
+\sq{\fEvalFinale}\hspace{2mm}\lab{40mm}{Évaluation finale}\gap
+\lab{44mm}{\% Évaluation intermédiaire}\cb{18mm}{\fPcInter}\hfill\lab{36mm}{\% Évaluation finale}\cb{18mm}{\fPcFinal}\hspace*{50mm}
+\label{fin}
+\end{document}
